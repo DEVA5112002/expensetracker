@@ -10,12 +10,12 @@ app.use(bodyParser.text());
 app.use(cors({
     origin: '*'
 }));
-mongoose.connect('mongodb://0.0.0.0:27017/expense-tracker')
+mongoose.connect('mongodb+srv://devananth2024:OYnLaHOtwVt1ixa2@lost.8ekpzj9.mongodb.net/?retryWrites=true&w=majority')
 .then(()=>console.log('db connected'))
 app.use(logineing);
 app.get('/api/v1/expenses',getAllExpenses)
 app.get('/api/get_id/:id',getAllExpensesBYId)
-app.post('/api/add_expense',AdminCheck,createExpense)
+app.post('/api/add_expense',createExpense)
 app.delete('/api/del_expen/:id',deleteExpenseById)
 app.put('/api/update/:id',updateExpense)
 
